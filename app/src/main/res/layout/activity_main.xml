@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/padding_normal"
+    android:layout_marginEnd="@dimen/padding_normal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textSize="@dimen/text_size_large" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/weight_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity=""
+            android:text="@string/weight"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/weight_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:gravity="end"
+            android:hint="@string/weight_hint"
+            android:textSize="@dimen/text_size_normal"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/height_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity=""
+            android:text="@string/height"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/height_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:gravity="end"
+            android:hint="@string/height_hint"
+            android:textSize="@dimen/text_size_normal"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bmi_value_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity=""
+            android:text="@string/bmi"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/bmi_value"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:gravity="end"
+            android:textSize="@dimen/text_size_normal"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bmi_status_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity=""
+            android:text="@string/status"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/bmi_status"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:gravity="end"
+            android:padding="10dp"
+            android:textSize="@dimen/text_size_normal"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:padding="10dp"
+        android:text="@string/calculate"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_normal"
+        app:cornerRadius="1dp"
+        android:background="@drawable/btn"
+        android:backgroundTint="@color/jade"
+        />
+
+
+</LinearLayout>

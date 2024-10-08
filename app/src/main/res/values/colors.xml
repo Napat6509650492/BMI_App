@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="jade">#00A36C</color>
+
+    <!-- Severe Thinness -->
+    <color name="bmi_severe_thinness">#FF3D00</color> <!-- สีแดงเข้ม -->
+
+    <!-- Moderate Thinness -->
+    <color name="bmi_moderate_thinness">#FF5722</color> <!-- สีส้มแดง -->
+
+    <!-- Mild Thinness -->
+    <color name="bmi_mild_thinness">#FF9800</color> <!-- สีส้ม -->
+
+    <!-- Normal -->
+    <color name="bmi_normal">#4CAF50</color> <!-- สีเขียว -->
+
+    <!-- Overweight -->
+    <color name="bmi_overweight">#FFC107</color> <!-- สีเหลือง -->
+
+    <!-- Obese Class I -->
+    <color name="bmi_obese_class_1">#FFEB3B</color> <!-- สีเหลืองสด -->
+
+    <!-- Obese Class II -->
+    <color name="bmi_obese_class_2">#FF9800</color> <!-- สีส้ม -->
+
+    <!-- Obese Class III -->
+    <color name="bmi_obese_class_3">#F44336</color> <!-- สีแดง -->
+</resources>

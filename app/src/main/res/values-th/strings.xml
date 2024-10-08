@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">เครื่องคำนวณค่าดัชนีมวลกาย</string>
+    <string name="title">ค่าดัชนีมวลกาย</string>
+    <string name="weight">น้ำหนัก (กิโลกรัม)</string>
+    <string name="height">ส่วนสูง (เซนติเมตร)</string>
+    <string name="bmi">ค่าดัชนีมวลกาย</string>
+    <string name="status">อยู่ในเกณฑ์</string>
+    <string name="calculate">คำนวณ</string>
+    <string name="weight_hint">50.5</string>
+
+    <!-- Existing strings -->
+    <string name="severe_thinness">ผอมอย่างรุนแรง</string>
+    <string name="moderate_thinness">ผอมปานกลาง</string>
+    <string name="mild_thinness">ผอมเล็กน้อย</string>
+    <string name="normal">ปกติ</string>
+    <string name="overweight">น้ำหนักเกิน</string>
+    <string name="obese_class_i">อ้วนระดับ 1</string>
+    <string name="obese_class_ii">อ้วนระดับ 2</string>
+    <string name="obese_class_iii">อ้วนระดับ 3</string>
+    <string name="height_hint">155.5</string>
+</resources>
+
