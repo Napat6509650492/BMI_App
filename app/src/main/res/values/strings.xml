@@ -6,7 +6,7 @@
     <string name="bmi">BMI</string>
     <string name="status">Status</string>
     <string name="calculate">Calculate</string>
-    <string name="weight_hint">50.5</string>
+    <string name="weight_hint">weight</string>
 
     <!-- Existing strings -->
     <string name="severe_thinness">Severe Thinness</string>
@@ -18,5 +18,5 @@
     <string name="obese_class_ii">Obese Class II</string>
     <string name="obese_class_iii">Obese Class III</string>
 
-    <string name="height_hint">155.5</string>
+    <string name="height_hint">height</string>
 </resources>
