@@ -7,7 +7,7 @@
     <string name="bmi">ค่าดัชนีมวลกาย</string>
     <string name="status">อยู่ในเกณฑ์</string>
     <string name="calculate">คำนวณ</string>
-    <string name="weight_hint">50.5</string>
+    <string name="weight_hint">น้ำหนัก</string>
 
     <!-- Existing strings -->
     <string name="severe_thinness">ผอมอย่างรุนแรง</string>
@@ -18,6 +18,6 @@
     <string name="obese_class_i">อ้วนระดับ 1</string>
     <string name="obese_class_ii">อ้วนระดับ 2</string>
     <string name="obese_class_iii">อ้วนระดับ 3</string>
-    <string name="height_hint">155.5</string>
+    <string name="height_hint">ส่วนสูง</string>
 </resources>
 

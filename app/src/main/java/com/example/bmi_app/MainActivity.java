@@ -1,18 +1,22 @@
 package com.example.bmi_app;
 
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.graphics.Insets;
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     protected void bmiCalculate(){
         String weightStr = weightInput.getText().toString();
         String heightStr = heightInput.getText().toString();
@@ -110,6 +116,31 @@ public class MainActivity extends AppCompatActivity {
             }
 
             bmiCategory.setText(category);
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        float newScale = newConfig.fontScale;
+
+        float scaledTextSize = getResources().getDimensionPixelSize(R.dimen.text_size_normal) * newScale;
+
+        adjustFontSizeForAllViews(findViewById(R.id.main), newScale);
+    }
+
+    private void adjustFontSizeForAllViews(View view, float newScale) {
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                View child = viewGroup.getChildAt(i);
+                adjustFontSizeForAllViews(child, newScale); // เรียกซ้ำสำหรับลูกของ ViewGroup
+            }
+        } else if (view instanceof TextView) {
+            // ปรับขนาดข้อความสำหรับ TextView
+            TextView textView = (TextView) view;
+            float scaledTextSize = getResources().getDimensionPixelSize(R.dimen.text_size_normal) * newScale;
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, scaledTextSize);
         }
     }
 }
