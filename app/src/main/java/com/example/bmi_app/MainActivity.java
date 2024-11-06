@@ -1,6 +1,7 @@
 package com.example.bmi_app;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +30,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText weightInput, heightInput;
     private TextView bmiResult, bmiCategory;
     private Button calculateButton;
+    private ImageButton historyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +53,18 @@ public class MainActivity extends AppCompatActivity {
         bmiResult = findViewById(R.id.bmi_value);
         bmiCategory = findViewById(R.id.bmi_status);
         calculateButton = findViewById(R.id.calculate_button);
+        historyButton = findViewById(R.id.history);
         weightInput.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(8, 2)});
         heightInput.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(8, 2)});
 
 
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 bmiCalculate();
             }
         });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
