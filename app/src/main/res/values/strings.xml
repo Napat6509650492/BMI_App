@@ -19,4 +19,11 @@
     <string name="obese_class_iii">Obese Class III</string>
 
     <string name="height_hint">height</string>
+
+    <string name="col_trans_id_str">Date</string>
+    <string name="col_name_str">Weight</string>
+    <string name="col_msg_str">BMI</string>
+    <string name="col_amt_str">Status</string>
+    <string name="col_title">BMI history</string>
+
 </resources>
