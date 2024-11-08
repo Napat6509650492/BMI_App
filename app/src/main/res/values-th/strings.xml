@@ -20,10 +20,11 @@
     <string name="obese_class_iii">อ้วนระดับ 3</string>
     <string name="height_hint">ส่วนสูง</string>
 
-    <string name="col_trans_id_str">วันที่</string>
-    <string name="col_name_str">น้ำหนัก</string>
-    <string name="col_msg_str">ดัชนีมวลกาย</string>
-    <string name="col_amt_str">อยู่ในเกณฑ์</string>
+    <string name="col_height">ส่วนสูง</string>
+    <string name="col_date">วันที่</string>
+    <string name="col_weight">น้ำหนัก</string>
+    <string name="col_bmi">ดัชนีมวลกาย</string>
+    <string name="col_status">อยู่ในเกณฑ์</string>
     <string name="col_title">ประวัติค่าดัชนีมวลกาย</string>
 
 </resources>

@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -29,7 +29,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/col_trans_id_str" />
+            android:text="@string/col_date" />
 
         <TextView
             android:id="@+id/weight"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/col_name_str" />
+            android:text="@string/col_weight" />
 
         <TextView
             android:id="@+id/height"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="@string/col_msg_str" />
+            android:text="@string/col_height" />
 
         <TextView
             android:id="@+id/bmiResult"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/col_amt_str" />
+            android:text="@string/col_bmi" />
         <TextView
             android:id="@+id/bmiCategory"
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/col_amt_str" />
+            android:text="@string/col_status" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
