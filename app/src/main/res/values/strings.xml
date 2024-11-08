@@ -26,4 +26,6 @@
     <string name="col_amt_str">Status</string>
     <string name="col_title">BMI history</string>
 
+    <string name="file_name" translatable="false">history</string>
+
 </resources>

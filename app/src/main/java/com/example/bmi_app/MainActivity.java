@@ -1,6 +1,7 @@
 package com.example.bmi_app;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -27,10 +28,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView bmiResult, bmiCategory;
     private Button calculateButton;
     private ImageButton historyButton;
+    private SimpleDateFormat date_Formatter;
+
+    @SuppressLint("SimpleDateFormat")
+    public MainActivity(){
+        date_Formatter = new SimpleDateFormat("dd/MM/yyyy");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bmiCalculate();
+                saveDataToJson();
             }
         });
 
@@ -158,6 +181,65 @@ public class MainActivity extends AppCompatActivity {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, scaledTextSize);
         }
     }
+
+    private void saveDataToJson(){
+        JSONArray jsonArray = new JSONArray();
+        String filename = getString(R.string.file_name);
+        // Try reading the existing JSON file (if any)
+        try (FileInputStream fis = openFileInput(filename);
+             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(isr)){
+            StringBuilder stringBuilder = new StringBuilder();
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+
+            // If the file isn't empty, parse it into a JSONArray
+            if (stringBuilder.length() > 0) {
+                jsonArray = new JSONArray(stringBuilder.toString());
+            }
+        } catch (FileNotFoundException e) {
+            // Handle file not found (file might not exist yet)
+            Log.v("save","File Not Found");
+        } catch (IOException | JSONException e) {
+            // Handle other exceptions (e.g., IO errors or JSON parsing errors)
+            Log.v("save",e.getMessage(),e);
+        }
+
+
+        try {
+            // รับค่าจาก EditText
+            String date = date_Formatter.format(new Date());
+            String weight = weightInput.getText().toString();
+            String height = weightInput.getText().toString();
+            String bmi = bmiResult.getText().toString();
+            String status = bmiCategory.getText().toString();
+
+            // สร้าง JSON object
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("date", date);
+            jsonObject.put("weight", weight);
+            jsonObject.put("height", height);
+            jsonObject.put("bmi", bmi);
+            jsonObject.put("status", status);
+
+            jsonArray.put(jsonObject);
+
+            // เขียน JSON ลง Internal Storage
+            FileOutputStream fos = openFileOutput(filename, Context.MODE_PRIVATE);
+            OutputStreamWriter osw = new OutputStreamWriter(fos);
+            osw.write(jsonArray.toString());
+            osw.close();
+            fos.close();
+
+        } catch (Exception e) {
+            Log.v("save",e.getMessage(),e);
+        }
+    }
+
+
 }
 
 class DecimalDigitsInputFilter implements InputFilter {
