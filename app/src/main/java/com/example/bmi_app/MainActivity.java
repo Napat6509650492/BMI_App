@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             // รับค่าจาก EditText
             String date = date_Formatter.format(new Date());
             String weight = weightInput.getText().toString();
-            String height = weightInput.getText().toString();
+            String height = heightInput.getText().toString();
             String bmi = bmiResult.getText().toString();
             String status = bmiCategory.getText().toString();
 
